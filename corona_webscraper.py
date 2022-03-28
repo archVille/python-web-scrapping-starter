@@ -10,5 +10,10 @@ str = BeautifulSoup(req, "html.parser")
 
 data = str.find_all('div', class_="maincounter-number")
 
-print(data[0].text)
+cases = data[0].text.strip().replace(',','')
+recovered = data[2].text.strip().replace(',','')
+
+print('cases:' + cases)
+print('recovered:' + recovered)
+
 print()
